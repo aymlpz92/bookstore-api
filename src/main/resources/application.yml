@@ -2,4 +2,14 @@ spring:
   application:
     name: bookstore-api
 
+# Configuration bdd postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${spring.application.name}
+    username: postgres
+    password: postgres
 
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    show-sql: true
