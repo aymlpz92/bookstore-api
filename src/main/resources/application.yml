@@ -4,7 +4,7 @@ spring:
 
 # Configuration bdd postgres
   datasource:
-    url: jdbc:postgresql://localhost:5432/${spring.application.name}
+    url: jdbc:postgresql://localhost:5432/bookstore
     username: postgres
     password: postgres
 
