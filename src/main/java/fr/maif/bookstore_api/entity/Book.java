@@ -2,6 +2,7 @@ package fr.maif.bookstore_api.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.aspectj.lang.annotation.DeclareAnnotation;
@@ -20,16 +21,19 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String title;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String isbn;
 
-    @DecimalMin(value = "1.0")
+    @DecimalMin(value = "0.01")
     private Double price;
 
+    @NotNull
     private Date publicationDate;
 
+    @NotNull
     private int stock;
 
     @CreationTimestamp
